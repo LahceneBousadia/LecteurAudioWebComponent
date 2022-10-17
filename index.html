@@ -1,0 +1,118 @@
+<html>
+
+<head>
+
+    <div class="title">Lecteur Audio - Web Component</div>
+    <script src="myComponents/index.js" type="module"></script>
+    <style>
+        body {
+            background-image: url("https://media.istockphoto.com/videos/colored-smoke-on-a-dark-background-blue-and-red-light-with-smoke-video-id1341408852?b=1&k=20&m=1341408852&s=640x640&h=C6ymXpr_Jn6-WqQmHHuS8z6TGBtkWDQ9x6tFs_hsBjs=");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        div audio {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #myCanvas {
+            margin-bottom: 10px;
+            border: 1px solid;
+        }
+
+        .eq {
+            margin: 32px;
+            border: 1px solid;
+            border-radius: 15px;
+            background-color: lightGrey;
+            padding: 10px;
+            width: 600px;
+            box-shadow: 10px 10px 5px grey;
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 12px;
+        }
+
+
+        div.controls:hover {
+            color: blue;
+            font-weight: bold;
+        }
+
+        div.controls label {
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+        }
+
+        div.controls label,
+        div.controls input,
+        output {
+            vertical-align: middle;
+            padding: 0;
+            margin: 0;
+            font-family: "Open Sans", Verdana, Geneva, sans-serif, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+
+        <div class="eq">
+            <my-audio src="https://mainline.i3s.unice.fr/mooc/LaSueur.mp3"> </my-audio>
+
+
+            <canvas id="myCanvas" width="600px" height="100%"></canvas>
+            <div class="controls">
+                <label>60Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 0);"></input>
+                <output id="gain0">0 dB</output>
+            </div>
+            <div class="controls">
+                <label>170Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 1);"></input>
+                <output id="gain1">0 dB</output>
+            </div>
+            <div class="controls">
+                <label>350Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 2);"></input>
+                <output id="gain2">0 dB</output>
+            </div>
+            <div class="controls">
+                <label>1000Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 3);"></input>
+                <output id="gain3">0 dB</output>
+            </div>
+            <div class="controls">
+                <label>3500Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 4);"></input>
+                <output id="gain4">0 dB</output>
+            </div>
+            <div class="controls">
+                <label>10000Hz</label>
+                <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 5);"></input>
+                <output id="gain5">0 dB</output>
+            </div>
+
+        </div>
+
+    </center>
+</body>
+
+
+
+</html>
